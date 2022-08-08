@@ -12,4 +12,14 @@ public class HelloController {
     public String hello(Principal principal) {
         return "Hello," + principal.getName();
     }
+
+    @GetMapping("/foo")
+    public String foo(Principal principal) {
+        return "Hello," + principal.getName();
+    }
+
+    @GetMapping("/bar")
+    public String bar(Principal principal) {
+        return "Hello";
+    }
 }

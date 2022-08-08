@@ -16,11 +16,13 @@ public class OAuth2LoginConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().authenticated()
-                )
-                .oauth2Login(withDefaults());
+        http.requestMatchers().mvcMatchers("/foo");
+        return http.build();
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain2(HttpSecurity http) throws Exception {
+        http.requestMatchers().mvcMatchers("/bar");
         return http.build();
     }
 
