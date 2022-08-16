@@ -1,28 +1,31 @@
-//package com.twoonestudy.springsecurity.config;
-//
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
-//import org.springframework.security.config.Customizer;
-//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-//import org.springframework.security.oauth2.client.registration.ClientRegistration;
-//import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-//import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
-//import org.springframework.security.oauth2.core.AuthorizationGrantType;
-//import org.springframework.security.web.SecurityFilterChain;
-//
-//import static org.springframework.security.config.Customizer.withDefaults;
-//
+package com.twoonestudy.springsecurity.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.oauth2.client.registration.ClientRegistration;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
+import org.springframework.security.oauth2.core.AuthorizationGrantType;
+import org.springframework.security.web.SecurityFilterChain;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+
+/**
+ * 覆盖yml配置
+ */
 //@Configuration
 //public class OAuth2LoginConfig {
 //
 //    @Bean
 //    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//        http
-//                .passwordManagement(Customizer.withDefaults())
-//                .authorizeHttpRequests(authorize -> authorize
-//                        .anyRequest().authenticated()
-//                )
-//                .oauth2Login(withDefaults());
+//        http.requestMatchers().mvcMatchers("/foo");
+//        return http.build();
+//    }
+//
+//    @Bean
+//    public SecurityFilterChain filterChain2(HttpSecurity http) throws Exception {
+//        http.requestMatchers().mvcMatchers("/bar");
 //        return http.build();
 //    }
 //
