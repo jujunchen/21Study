@@ -19,6 +19,8 @@ spring:
             authorization-grant-type: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
             client-name: Customize
+            scope:
+              - userinfo
         provider:
           gitee:
             authorization-uri: https://gitee.com/oauth/authorize
@@ -26,7 +28,7 @@ spring:
             user-info-uri: https://gitee.com/api/v5/user
             user-name-attribute: name
           customize:
-            authorization-uri: http://localhost:9000/oauth/authorize
-            token-uri: http://localhost:9000/oauth/token
-            user-info-uri: http://localhost:9000/api/v5/user
+            authorization-uri: http://localhost:9000/oauth2/authorize
+            token-uri: http://localhost:9000/oauth2/token
+            user-info-uri: http://localhost:9000/userinfo
             user-name-attribute: username
