@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>com.twoonestudy</groupId>
-    <artifactId>spring-security</artifactId>
+    <artifactId>spring-security-oauth2-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-security</name>
+    <name>spring-security-oauth2-client</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

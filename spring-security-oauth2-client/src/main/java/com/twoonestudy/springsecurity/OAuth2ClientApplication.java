@@ -6,10 +6,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 @EnableWebSecurity(debug = true)
 @SpringBootApplication
-public class SpringSecurityApplication {
+public class OAuth2ClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringSecurityApplication.class, args);
+        SpringApplication.run(OAuth2ClientApplication.class, args);
     }
 
 }
