@@ -1,5 +1,6 @@
 package com.twoonestudy.springsecurity;
 
+import com.twoonestudy.springsecurity.res.Result;
 import com.twoonestudy.springsecurity.res.UserInfoRes;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserInfoController {
 
     @GetMapping("/userinfo")
-    public UserInfoRes getUserInfo() {
+    public Result getUserInfo() {
         UserInfoRes userInfoRes = new UserInfoRes();
         userInfoRes.setUsername("阿提说说");
-        return userInfoRes;
+        return Result.ok(userInfoRes);
     }
 }

@@ -30,5 +30,5 @@ spring:
           customize:
             authorization-uri: http://localhost:9000/oauth2/authorize
             token-uri: http://localhost:9000/oauth2/token
-            user-info-uri: http://localhost:9000/userinfo
+            user-info-uri: http://localhost:8090/userinfo
             user-name-attribute: username
