@@ -21,8 +21,8 @@ import static org.springframework.security.config.Customizer.withDefaults;
 /**
  * 覆盖yml配置
  */
-//@Configuration
-//public class OAuth2LoginConfig {
+@Configuration
+public class OAuth2LoginConfig {
 //
 //    @Bean
 //    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -55,4 +55,18 @@ import static org.springframework.security.config.Customizer.withDefaults;
 //                .build();
 //    }
 
-//}
+    @Bean
+    SecurityFilterChain oauth2SecurityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeRequests((requests) -> requests.anyRequest().authenticated());
+        http.oauth2Login(oauth2 -> oauth2.userInfoEndpoint(userInfo -> userInfo.userService(CustomUserService())));
+        http.oauth2Client();
+        return http.build();
+    }
+
+    private OAuth2UserService<OAuth2UserRequest, OAuth2User> CustomUserService() {
+        final String CUSTOM = "customize";
+        final CompositeOAuth2UserService compositeOAuth2UserService = new CompositeOAuth2UserService();
+        compositeOAuth2UserService.getUserServiceMap().put(CUSTOM, new CustomOAuth2UserService());
+        return compositeOAuth2UserService;
+    }
+}
