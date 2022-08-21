@@ -13,6 +13,7 @@ public class CustomOAuth2User implements OAuth2User {
 
     private final String nameAttributeKey;
 
+    //用户信息所在的属性名
     public static final String DATA_KEY = "data";
 
     public CustomOAuth2User(Collection<? extends GrantedAuthority> authorities, Map<String, Object> attributes, String nameAttributeKey) {

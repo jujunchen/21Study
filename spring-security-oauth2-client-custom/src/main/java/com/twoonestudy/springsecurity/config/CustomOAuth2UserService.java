@@ -74,6 +74,7 @@ public class CustomOAuth2UserService implements OAuth2UserService {
         for (String authority : token.getScopes()) {
             authorities.add(new SimpleGrantedAuthority("SCOPE_" + authority));
         }
+        //更换为自定义的OAuth2User实现
         return new CustomOAuth2User(authorities, userAttributes, userNameAttributeName);
     }
 
